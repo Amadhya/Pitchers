@@ -1,0 +1,24 @@
+<div id="sign-pages">
+<div class="style-sign-pages">
+<div class="adjust"></div>
+<div class="style-pages">
+<h2>Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions" id="wrap">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+<div class="adjust"></div>
+</div>
+</div>

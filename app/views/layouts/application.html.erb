@@ -5,8 +5,9 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Oswald|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   </head>
 
   <body>
@@ -24,8 +25,8 @@
 
         <% else %>
 
-          <p class="display-inline"><%= link_to "Sign In", new_user_session_path %></p>
-          <p class="display-inline"><%= link_to "Sign Up", new_user_registration_path %></p>
+          <p ><%= link_to "Sign In", new_user_session_path %></p>
+          <p ><%= link_to "Sign Up", new_user_registration_path %></p>
         <% end %>
       </div>
 
@@ -36,16 +37,16 @@
     <%= yield %>
     <footer>
       <div class="icons">
-      <button><a href="https://www.youtube.com/"><i class="fa fa-youtube" style="font-size:25px;"></i></a></button>
-       <button><a href="https://www.twitter.com/"><i class="fa fa-twitter" style="font-size:25px;"></i></a></button>
-       <button><a href="https://www.facebook.com/"><i class="fa fa-facebook" style="font-size:25px;"></i></a></button>
-       <button><a href="https://www.instagram.com/"><i class="fa fa-instagram" style="font-size:25px;"></i></a></button>
-       <button><a href="https://www.linkedin.com/"><i class="fa fa-linkedin" style="font-size:25px;"></i></a></button>
-       <button><a href="https://www.quora.com/"><i class="fa fa-quora" style="font-size:25px;"></i></a></button>
+       <a href="https://www.twitter.com/"><i class="fab fa-twitter" style="font-size:20px;color:white"></i></a>
+       <a href="https://www.facebook.com/"><i class="fab fa-facebook-f" style="font-size:20px;color:white"></i></i></a>
+       <a href="https://www.instagram.com/"><i class="fab fa-instagram" style="font-size:20px;color:white"></i></a>
+       <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in" style="font-size:20px;color:white"></i></a>
+       <a href="https://www.quora.com/"><i class="fab fa-quora" style="font-size:20px;color:white"></i></a>
      </div>
-       <p>@All Rights Reserved</p>
-       <p>Mandeep Sidhu | Amadhya Anand</p>
+       <h6>@All Rights Reserved</h6>
+       <h5>Mandeep Sidhu | Amadhya Anand</h5>
     </footer>
+
   </body>
 </html>
 

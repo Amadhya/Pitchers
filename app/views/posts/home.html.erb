@@ -28,12 +28,15 @@
 						<% if user_signed_in? %>
 								<%= post.likes.length %>
 								&nbsp
-								<%= link_to post.like_status_string(current_user.id), toggle_like_path(post.id), method: :post %> 
+								<%= link_to post.like_status_string(current_user.id), toggle_like_path(post.id), method: :post %>
+								<i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i> 
 						<% else %>
-								<%= post.likes.length %> Likes 
+								<%= post.likes.length %> Likes
+								<i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i> 
 						<% end %>
 						<% if user_signed_in? && post.user_id ==  current_user.id %>
 						| <%= link_to "Delete", destroy_post_path(post.id), method: :delete %>
+						<i class="fas fa-trash-alt" style="font-size:24px;color:red"></i>
 						<% end %>
 
 						
@@ -56,14 +59,21 @@
 									<h4><%= comment.user.email %></h4>
 									&nbsp
 									<%= comment.content %>
-									<p><% if user_signed_in? %>
+									<br>
+									<br>
+									<% if user_signed_in? %>
 										<%= comment.likes.count%>
 										&nbsp
 										 <%= link_to comment.like_status_string(current_user.id),toggleC_like_path(comment.id) %>
+										 <i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i>
+									<%else%>
+										<%= comment.likes.count%> Likes <i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i>
+
 									<%end%>
 									<% if user_signed_in? && comment.user_id ==  current_user.id %>
 										| <%= link_to "Delete", destroy_comment_path(comment.id), method: :delete %>
-										<% end %></p> 
+										<i class="fas fa-trash-alt" style="font-size:24px;color:red"></i>
+										<% end %>
 
 								</li>
 								</ul>
