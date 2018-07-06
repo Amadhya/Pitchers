@@ -61,5 +61,31 @@ body{
 	button{
 		cursor:pointer;
 	}
+
+	footer{
+	        background-color: #6fb8e0;
+    	height: 18vh;
+    	width: 100%;
+    	 .icons{
+    	display: flex;
+    	justify-content: space-evenly;
+    	button{
+    		
+   			height: 30%;
+    		margin-top: 2%;
+    		border-radius: 50%;
+    		color: #7c7c8a;
+    	}
+    	}
+    	p :first-child{
+    	margin-top: 8%;
+    	}
+    	p { 
+    	text-align:center;
+    	font-size: 10px;
+    	
+		}
+    	
+	}
 	
 }
