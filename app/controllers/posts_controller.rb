@@ -15,8 +15,10 @@ class PostsController < ApplicationController
   end
 
   def create
-
-  	post = Post.create(content: params[:post][:content], user_id: current_user.id)
+    
+  	post = Post.create(user_params)
+    post.user_id= current_user.id
+    post.save
 
   	redirect_to action: "home"
 
@@ -41,7 +43,9 @@ class PostsController < ApplicationController
   	end
 
   end
-
+  def user_params
+  params.require(:post).permit(:image,:content)
+  end
 
 end
 

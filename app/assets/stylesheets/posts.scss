@@ -6,6 +6,33 @@
 	justify-content:space-evenly;
 	
 	padding-top:25px;
+	.card-parent{
+	display:flex;
+	.part1{
+	max-width:25%;
+	flex-grow: 1;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .empty1{
+    height:20%;
+    }
+    .empty2{
+    height:20%;
+    }
+
+	}
+	.part2{
+	flex-grow:2;
+	}
+
+}
+
+
+
+
 
 	a{
 		display:inline;
@@ -14,7 +41,7 @@
 	}
 
 	.deewar-posts{
-		width:50%;
+		width:80%;
 		display:flow-root;
 
 		.new-post-form{

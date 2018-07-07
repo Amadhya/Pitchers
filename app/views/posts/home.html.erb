@@ -5,8 +5,10 @@
 	<div class="deewar-posts">
 		<% if user_signed_in? %>
 			<div class="new-post-form">
-			<%= form_for @post do |f| %>
+			<%= form_for @post, html: { multipart: true } do |f| %>
 				<%= f.text_area :content %>
+				<%= f.file_field :image %>
+ 
 				<br>
 				<%= f.submit %>
 			<% end %>
@@ -21,10 +23,21 @@
 				<li>
 					<div>
 
-						<h3><%= post.user.email %></h3>
+						<div class="card-parent">
 
+						<div class="part1">
+							<div class="empty1"></div>
+						<%= image_tag post.image.url(:medium)%>
+						<div class="empty2"></div>
+						</div>
+
+						<div class="part2">
+						<h3><%= post.user.email %></h3>
 						<p><%= post.content %></p>
-						
+						</div>
+
+						</div>
+
 						<% if user_signed_in? %>
 								<%= post.likes.length %>
 								&nbsp
