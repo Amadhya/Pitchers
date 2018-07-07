@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #posts-home{
 	display:flex;
+	min-height:77vh;
 	justify-content:space-evenly;
 	
 	padding-top:25px;
@@ -57,6 +58,12 @@
 
 			form{
 				display:grid;
+
+				input{
+					border-radius: 5px;
+					border:hidden;
+					padding:5px;
+				}
 			}
 		}
 
@@ -70,6 +77,11 @@
 				height:20px;
 				border-radius: 5px;
 			}
+			input{
+					border-radius: 5px;
+					border:hidden;
+					padding:5px;
+				}
 
 			#spacing{
 				form input[type="submit" i]{

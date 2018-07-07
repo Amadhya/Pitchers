@@ -16,6 +16,7 @@
  */
 @import "font-awesome";
 body{
+	
 	margin: 0;
 	background-color:lavender;
 
@@ -26,30 +27,29 @@ body{
     	background-color: #0099CC;	
     	color:white;
     	font-family: 'Ubuntu';
+    	min-height:10vh;
 
 		
 		#part1{
-
-			margin-right: 1%;
+			flex-grow: 1;
+			width:10%;
+			text-align:center;
 		 	button{
 				border: hidden;
     			background-color: #0099CC;
-    			margin-left: 10px;
     		}
+		}
+		#part2{
+			flex-grow: 2;
 		}
 		#part2 h1{
 			text-align:center;
 		}
-		.auth-info-links{
-			
-
+		.auth-info-links{			
+			flex-grow: 1;
+			width:10%;
 			p{	
 				text-align:center;
-				margin-right:8px;
-			}
-			.display-inline{
-				display:inline;
-
 			}
 			a{
 				text-decoration:none;
@@ -63,27 +63,28 @@ body{
 	}
 
 	footer{
-	        background-color: #6fb8e0;
-    	height: 18vh;
-    	width: 100%;
-    	 .icons{
-    	display: flex;
-    	justify-content: space-evenly;
-    	button{
-    		
-   			height: 30%;
-    		margin-top: 2%;
-    		border-radius: 50%;
-    		color: #7c7c8a;
-    	}
-    	}
-    	p :first-child{
-    	margin-top: 8%;
-    	}
-    	p { 
+	    background-color: #0099cccc;
+    	color:white;
+    	min-height:10vh;
+    	font-family: 'Ubuntu';
     	text-align:center;
-    	font-size: 10px;
-    	
+    	display:flow-root;
+    	padding-top:15px;
+    	padding-bottom:15px;	
+    	.icons{
+    		display: flex;
+    		justify-content: space-evenly;
+    		a{
+    			display:inline;
+    		}
+    	}
+    	h6{ 
+    		margin-bottom:0;
+    		margin-top:20px;	
+		}
+		h5{
+			margin-top:10px;
+			margin-bottom:0;
 		}
     	
 	}
