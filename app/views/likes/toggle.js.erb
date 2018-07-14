@@ -1,0 +1,3 @@
+ console.log('hehe');
+var newLike = $('<%= escape_javascript render "posts/like_post", post: @post %>');
+$('#post-<%= @post.id %>-likes').html(newLike);

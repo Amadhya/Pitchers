@@ -19,12 +19,16 @@ class Post < ApplicationRecord
 
 	def like_status_string(user_id)
 		if self.user_can_like(user_id)
-			return 'Like'
+			return '<i class="far fa-thumbs-up" style="font-size:22px;color:#41a7d4">Like</i>'.html_safe
 		else
-			return 'Unlike'
+			return '<i class="fas fa-thumbs-up" style="font-size:22px;color:#41a7d4">Unlike</i>'.html_safe
 
 		end
 
+	end
+
+	def length()
+		return self.likes.length
 	end
 
 end

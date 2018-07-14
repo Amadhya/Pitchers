@@ -1,0 +1,41 @@
+<ul class="posts-list-<%=post.id%>">
+<li id="posts-list-<%=post.id%>">
+<div>
+
+	<div class="card-parent">
+
+		<div class="part1">
+			<div class="empty1"></div>
+			<%= image_tag post.image.url(:medium)%>
+
+			<div class="empty2"></div>
+		</div>
+
+		<div class="part2">
+			<h3><%= post.user.email %></h3>
+			<p><%= post.content %></p>
+		</div>
+
+	</div>
+	<br>
+	<% if user_signed_in? %> 
+
+		<span id="post-<%=post.id%>-likes">
+			<%= render 'like_post' , post:post%>	
+		</span>
+			
+	<% else %>
+		<%= post.likes.length %> 
+		<i class="fas fa-thumbs-up" style="font-size:26px;color:#41a7d4">Likes</i> 
+	<% end %>
+	
+	<% if user_signed_in? && post.user_id ==  current_user.id %>
+		| <%= link_to destroy_post_path(post.id),remote: true , method: :delete do%>
+		<i class="fas fa-trash-alt" style="font-size:22px;color:red"></i>
+		<%end%>
+	<% end %>
+	
+	<%= render 'comments/post_comment' , post:post%>
+	</div>
+</li>
+</ul>

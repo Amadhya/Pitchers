@@ -5,8 +5,8 @@
 	<div class="deewar-posts">
 		<% if user_signed_in? %>
 			<div class="new-post-form">
-			<%= form_for @post, html: { multipart: true } do |f| %>
-				<%= f.text_area :content %>
+			<%= form_for @post, html: { multipart: true },remote:true do |f| %>
+				<%= f.text_area :content,id:"textContent" %>
 				<%= f.file_field :image %>
  
 				<br>
@@ -19,85 +19,7 @@
 		<div class="post-form">
 			
 			<% @posts.reverse.each do |post| %>
-				<ul class="posts-list">
-				<li>
-					<div>
-
-						<div class="card-parent">
-
-						<div class="part1">
-							<div class="empty1"></div>
-						<%= image_tag post.image.url(:medium)%>
-						<div class="empty2"></div>
-						</div>
-
-						<div class="part2">
-						<h3><%= post.user.email %></h3>
-						<p><%= post.content %></p>
-						</div>
-
-						</div>
-
-						<% if user_signed_in? %>
-								<%= post.likes.length %>
-								&nbsp
-								<%= link_to post.like_status_string(current_user.id), toggle_like_path(post.id), method: :post %>
-								<i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i> 
-						<% else %>
-								<%= post.likes.length %> Likes
-								<i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i> 
-						<% end %>
-						<% if user_signed_in? && post.user_id ==  current_user.id %>
-						| <%= link_to "Delete", destroy_post_path(post.id), method: :delete %>
-						<i class="fas fa-trash-alt" style="font-size:24px;color:red"></i>
-						<% end %>
-
-						
-
-						<div id="spacing">
-							<% if user_signed_in? %>
-							<h4>Add Comment</h4>
-							<%= form_for @comment do |f| %>
-								<%= f.hidden_field :post_id, value: post.id %>
-
-								<%= f.text_area :content %>
-								
-								<%= f.submit %>
-							<% end %>
-							<% end %>
-							<br>
-							<% post.comments.reverse.each do |comment| %>
-							<ul id="comments">
-								<li>
-									<h4><%= comment.user.email %></h4>
-									&nbsp
-									<%= comment.content %>
-									<br>
-									<br>
-									<% if user_signed_in? %>
-										<%= comment.likes.count%>
-										&nbsp
-										 <%= link_to comment.like_status_string(current_user.id),toggleC_like_path(comment.id) %>
-										 <i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i>
-									<%else%>
-										<%= comment.likes.count%> Likes <i class="fas fa-thumbs-up" style="font-size:24px;color:#41a7d4"></i>
-
-									<%end%>
-									<% if user_signed_in? && comment.user_id ==  current_user.id %>
-										| <%= link_to "Delete", destroy_comment_path(comment.id), method: :delete %>
-										<i class="fas fa-trash-alt" style="font-size:24px;color:red"></i>
-										<% end %>
-
-								</li>
-								</ul>
-							<% end %>
-							
-
-
-						</div>
-					</div>
-				</li>
-				</ul>
+				<%= render 'post',post:post%>
 			<% end %>
 			
 

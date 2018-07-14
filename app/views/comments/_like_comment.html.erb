@@ -1,0 +1,5 @@
+<span>
+	<%= comment.likes.count%>
+	&nbsp
+	<%= link_to comment.like_status_string(current_user.id),toggleC_like_path(comment.id),remote:true %>
+</span>

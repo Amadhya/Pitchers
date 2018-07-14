@@ -16,18 +16,20 @@ class PostsController < ApplicationController
 
   def create
     
-  	post = Post.create(user_params)
-    post.user_id= current_user.id
-    post.save
+  	@post = Post.create(user_params)
+    @post.user_id= current_user.id
+    @post.save
+    @comment=Comment.new
 
-  	redirect_to action: "home"
+  	# redirect_to action: "home"
 
   end
 
   def destroy
+    @post_id=@post.id
 	@post.destroy
 
-  	redirect_to action: "home"
+  	# redirect_to action: "home"
   end
 
 

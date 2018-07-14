@@ -1,0 +1,3 @@
+ console.log('hehe');
+var newLikeC = $('<%= escape_javascript render "comments/like_comment", comment: @comment %>');
+$('#comment-<%=@comment.id%>-like').html(newLikeC);
