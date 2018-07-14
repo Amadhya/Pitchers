@@ -1,4 +1,4 @@
 // console.log("hoo");
 var newComment=$('<%= escape_javascript render 'comments/comment', comment:@comment%>');
 $('.comments-create-<%=@comment.post_id%>').prepend(newComment);
-$('#content-text').val(' ');
+$('#content-text-<%=@comment.post_id%>').val(' ');
