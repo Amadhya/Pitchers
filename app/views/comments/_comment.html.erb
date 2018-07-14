@@ -11,7 +11,7 @@
 			</span>
 			
 		<%else%>
-			<%= comment.likes.count%>  <i class="fas fa-thumbs-up" style="font-size:20px;color:#41a7d4">Likes</i>
+			<%= comment.likes.count%>  <i class="fas fa-thumbs-up" style="font-size:16px;color:#41a7d4">Likes</i>
 
 		<%end%>
 		<% if user_signed_in? && comment.user_id ==  current_user.id %>

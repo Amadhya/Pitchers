@@ -12,6 +12,27 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $("#navBar").click(function(){
+    	console.log("helloo");
+        $("#mySidenav").css({
+        	"width":"17%",
+        	"display":"block"
+        });
+        $("main").css({
+        	"marginLeft":"17%"
+        });
+        $("footer").css({
+        	"marginLeft":"17%"
+        });
+    });
+    $("#close-nav").click(function(){
+        $("#mySidenav").css({
+        	"width":"0",
+        	"display":"block"
+        });
+    });
+});

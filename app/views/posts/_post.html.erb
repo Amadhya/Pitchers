@@ -26,7 +26,7 @@
 			
 	<% else %>
 		<%= post.likes.length %> 
-		<i class="fas fa-thumbs-up" style="font-size:26px;color:#41a7d4">Likes</i> 
+		<i class="fas fa-thumbs-up" style="font-size:22px;color:#41a7d4">Likes</i> 
 	<% end %>
 	
 	<% if user_signed_in? && post.user_id ==  current_user.id %>

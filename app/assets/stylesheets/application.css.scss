@@ -16,10 +16,33 @@
  */
 @import "font-awesome";
 body{
-	
 	margin: 0;
 	background-color:lavender;
-
+	main{
+		transition: margin-left .5s;
+	}
+	.sidenav{
+		height: 100%;
+    	width: 0;
+    	position: fixed;
+    	background-color: #0098cc;
+    	overflow-x: hidden;
+    	transition: 0.5s;
+    	#style-nav{
+    		height:50%;
+    		    display: flex;
+    			flex-direction: column;
+    			justify-content: space-evenly;
+    		a{
+    			text-align:center;
+    			text-decoration: none;
+    			font-size: 20px;
+    			font-family: Ubuntu;
+    			color:white;
+    		}
+    	}
+    	
+	}
 	header{	
      	display: flex;
     	justify-content: space-between;
