@@ -29,10 +29,18 @@ $(document).ready(function(){
         	"marginLeft":"17%"
         });
     });
-    $("#close-nav").click(function(){
+    $("#close-nav").click(function(event){
+        event.preventDefault();
         $("#mySidenav").css({
         	"width":"0",
-        	"display":"block"
         });
+        $("main").css({
+            "marginLeft":"0"
+        });
+        $("footer").css({
+            "marginLeft":"0"
+        });
+
     });
+    // $("#navBar").prop('disabled', false);
 });
