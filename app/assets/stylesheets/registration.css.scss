@@ -1,71 +1,14 @@
 #sign-pages{
-
-	
+	margin:2%;
+	font-family:"Ubuntu";
 	display: flex;
     justify-content: center;
     align-items: center;
     min-height:78vh;
-	.style-sign-pages{
-		display: flex;
-		flex-direction:column;
-		width: 40%;
-    	height: 65%;
-
-		.adjust{
-			min-height:2.5%;
-		}
-		.style-pages{
-			background-color:white;
-			min-height:95%;
-			border-radius: 16px;
-			h2{
-				text-align:center;
-			}	
-			.new_user{
-				padding-left:10px;
-				.field{
-					input {
-						    width: 95%;
-    						border-radius: 5px;
-    						background-color: lavender;
-    						padding: 5px;
-    						margin: 5px 0px;
-    						border:hidden;
-					}
-				}
-				#remember-me{
-				 	input{
-				 		width:auto;
-				 	}
-				}
-				.actions{
-					input{
-							border-radius: 5px;
-    						background-color: lavender;
-    						font-size: 15px;
-    						font-size: 18px;
-    						margin: 5px 0px;
-    						padding: 3px;
-
-					}
-
-				}
-				#wrap{
-						input{
-							display:inline;
-							max-width:95%;
-						}
-					}
-	
-			}
-			a{
-				display: block;
-    			padding-left:10px;
-    			cursor:pointer;
-			}
-		}
-
-	}	
+    button, input{
+    	    border-radius: 5%;
+    		border-style: groove;	
+    }	
 }
 
 

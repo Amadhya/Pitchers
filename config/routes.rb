@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     namespace :v1 do 
       get 'home',to:'posts#home'
       post 'sign_in',to:'users#sign_in'
-      post 'posts/create', to: 'posts#create'
+      get 'posts/create', to: 'posts#create'
     end
   end
  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
