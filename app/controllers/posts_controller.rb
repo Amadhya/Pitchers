@@ -12,6 +12,12 @@ class PostsController < ApplicationController
 
     # for new comment
     @comment = Comment.new
+    # respond_to do |format|
+    #   format.html
+    #   format.json{
+    #     render json: @posts
+    #   }
+    # end
   end
 
   def create

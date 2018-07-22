@@ -9,4 +9,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  def set_auth_token
+  	self.auth_token= SecureRandom.uuid
+  	self.save
+  end
+
 end

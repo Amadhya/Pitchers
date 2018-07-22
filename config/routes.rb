@@ -8,9 +8,16 @@ Rails.application.routes.draw do
 
 	# Post routes
   root 'posts#home'
+  get 'posts/home',to:'posts#home'
   post 'posts/create', as: :posts
   delete 'posts/:id', to: 'posts#destroy', as: :destroy_post
-
+  namespace :api do
+    namespace :v1 do 
+      get 'home',to:'posts#home'
+      post 'sign_in',to:'users#sign_in'
+      post 'posts/create', to: 'posts#create'
+    end
+  end
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

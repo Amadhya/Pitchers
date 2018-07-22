@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180707051657) do
+ActiveRecord::Schema.define(version: 20180721232537) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content", null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180707051657) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "auth_token"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 gem "paperclip", "~> 6.0.0"
+gem 'omniauth-google-oauth2'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'devise'
 gem 'jquery-rails'
 gem "font-awesome-rails"
