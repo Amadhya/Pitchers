@@ -3,21 +3,28 @@
   <%= button_to "Log in", new_session_path(resource_name),:class => "btn btn-outline-info" %>
 <% end -%>
 <br>
-<div class="btn-group mr-2 " role="group">
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= button_to "Sign up", new_registration_path(resource_name),:class => "btn btn-outline-info" ,method: :post %><br />
 <% end -%>
-&nbsp
-&nbsp
-&nbsp
+<div class="btn-group mr-2 " role="group">
+
+
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to omniauth_authorize_path(resource_name, provider),class: "btn btn-outline-danger" do%>
-    	<i class="fab fa-google-plus-g" style="font-size:20px">&nbsp Google</i>
-  	<% end -%>  
+    
+    
+      <%= button_to omniauth_authorize_path(resource_name, provider),style:"margin-right: 15px ;     background-color: white;
+        border: hidden;" do%>
+        <%if "#{OmniAuth::Utils.camelize(provider)}"== "Facebook"%>
+          <i class="fab fa-facebook-f btn btn-outline-primary" style="font-size:20px">&nbsp Facebook</i>
+        <%else%>
+          <i class="fab fa-google-plus-g btn btn-outline-danger" style="font-size:20px"> Google</i> 
+        <% end -%>  
+  <% end -%>
   <% end -%>
 <% end -%>
 </div>
+<br>
 <br>
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />

@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 gem "paperclip", "~> 6.0.0"
 gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'devise'
 gem 'jquery-rails'
